@@ -37,5 +37,40 @@ th, td {
 </head>
 <body>
     <!-- ここにテーブル表示 -->
+    <?php
+    $c = [];    // 最終行の合計を入れる配列
+    $cnt = count($arr);
+    ?>
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>c1</th>
+                <th>c2</th>
+                <th>c3</th>
+                <th>横合計</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php for ($i = 1; $i <= $cnt; $i ++): ?>
+            <tr>
+                <td>r<?php echo $i; ?></td>
+                <?php $sub_total = 0; for ($j = 1; $j <= 3; $j ++): ?>
+                <td><?php $n = $arr['r' . $i]['c' . $j]; echo $n; ?></td>
+                <?php $c[$j] = isset($c[$j]) ? $c[$j] + $n : $n; $sub_total += $n; endfor; ?>
+                <td><?php echo $sub_total; ?></td>
+            </tr>
+            <?php endfor; ?>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>縦合計</th>
+                <?php for ($i = 1; $i <= 3; $i ++): ?>
+                <th><?php echo $c[$i]; ?></th>
+                <?php endfor; ?>
+                <th><?php echo array_sum($c); ?></th>
+            </tr>
+        </tfoot>
+    </table>
 </body>
 </html>
