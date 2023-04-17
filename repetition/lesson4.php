@@ -34,7 +34,7 @@ for ($input = 9; $input >= 0; $input --) {
   for ($a = 9; $a >= $input + 1; $a --) {
     echo $a - $input;
   }
-  echo  "\n";
+  echo  "<br>\n";
 }
 
 ?>

@@ -41,7 +41,7 @@ for ($i = 0; $i < count($arr) - 1; $i++) {
 <body>
     <!-- ここに並び替え後を表示 -->
     <?php
-      var_dump($arr);
+      foreach ($arr as $val) printf('%d<br>', $val);
     ?>
 </body>
 </html>
