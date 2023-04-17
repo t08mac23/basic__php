@@ -14,13 +14,13 @@
 
 for ($a = 1 ; $a <= 9 ; $a ++) {
   if ($a <= 9) {
-    for($b = 8 ; $b >= $a ; $b --){
+    for($b = 8 ; $b >= $a ; $b --) {
       echo "*";
     }
-    for($c = 1; $c <= $a ; $c++){
+    for($c = 1; $c <= $a ; $c++) {
       echo $c;
     }
-    for($d = $c -2 ; $d >= 1 ; $d--){
+    for($d = $c -2 ; $d >= 1 ; $d--) {
       echo $d;
     }
     echo  "\n";
