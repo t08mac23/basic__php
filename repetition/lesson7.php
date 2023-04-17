@@ -22,6 +22,15 @@ $arr = [99, 3, 12, 45, 60, 100, 31, 7, 28];
 $arr = [99, 3, 12, 45, 60, 100, 31, 7, 28];
 
 // ここで並び替え処理
+for($i = 0; $i < count($arr) - 1; $i++) {
+  for($j = $i+ 1; $j < count($arr); $j++) {
+    if($arr[$i] > $arr[$j]) {
+      $num = $arr[$i];
+      $arr[$i] = $arr[$j];
+      $arr[$j] = $num;
+    }
+  }
+}
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -31,5 +40,8 @@ $arr = [99, 3, 12, 45, 60, 100, 31, 7, 28];
 </head>
 <body>
     <!-- ここに並び替え後を表示 -->
+    <?php
+      var_dump($arr);
+    ?>
 </body>
 </html>
