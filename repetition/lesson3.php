@@ -4,7 +4,7 @@
 
 for ($i = 1; $i < 101; $i++) {
   echo $i;
-  echo "<br>\n";
+  echo "<br>";
 }
 
 ?>
