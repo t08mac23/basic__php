@@ -40,3 +40,5 @@ $today = new DateTime('now');
 $day = new DateTime('2020-1-1');
 $diff = $day->diff($today);
 echo $diff->days."日";
+
+ ?>
