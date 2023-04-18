@@ -7,3 +7,4 @@ function convertThreeTimes ($num) {
 
 echo convertThreeTimes(5);
 // 15
+?>
