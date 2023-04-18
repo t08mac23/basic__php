@@ -19,7 +19,7 @@ $week = [
   '金',
   '土',
 ];
-$date = date('w'); 
+$date = date('w');
 //日本語で曜日を出力
 echo '('.$week[$date].'曜日)';
 echo "<br>";
