@@ -9,7 +9,7 @@
 // 3回目の勝利です。
 // $_SESSIONの挙動やswitch文については調べてみてください。
 
-
+session_start();
 if (! isset($_SESSION['result'])) {
     $_SESSION['result'] = 0;
 }
@@ -25,6 +25,7 @@ class Player
                 break;
             case 2:
                 $janken = 'チョキ';
+                break;
             case 3:
                 $janken = 'パー';
                 break;
@@ -35,7 +36,7 @@ class Player
     }
 }
 
-class Me
+class Me extends Player
 {
     private $name;
     private $choice;
@@ -57,7 +58,7 @@ class Me
     }
 }
 
-class Enemy
+class Enemy extends Player
 {
     private $choice;
     public function __construct()
@@ -81,7 +82,7 @@ class Battle
         $this->second = $enemy->getChoice();
     }
 
-    private function judge(): int
+    private function judge(): string
     {
         if ($this->first === $this->second) {
             return '引き分け';
@@ -121,7 +122,7 @@ class Battle
 
     public function getVitories()
     {
-        return $_SESSION['result'];
+        return $_SESSION['result'] = $_SESSION['result'] + 1;
     }
 
     public function showResult()
@@ -134,7 +135,7 @@ if (! empty($_POST)) {
     $me    = new Me($_POST['last_name'], $_POST['first_name'], $_POST['choice'], $_POST['choice']);
     $enemy = new Enemy();
     echo $me->getName().'は'.$me->getChoice().'を出しました。';
-    echo '<br>'
+    echo '<br>';
     echo '相手は'.$enemy->getChoice().'を出しました。';
     echo '<br>';
     $battle = new Battle($me, $enemy);
@@ -154,7 +155,7 @@ if (! empty($_POST)) {
 </head>
 <body>
     <section>
-    <form action='./debug03.php'>
+    <form action='../5-10_debugging/lesson3.php' method='post'>
         <label>姓</label>
         <input type="text" name="last_name" value="<?php echo '山田' ?>" />
         <label>名</label>
