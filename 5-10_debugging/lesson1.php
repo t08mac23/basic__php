@@ -19,7 +19,7 @@ if (! empty($_POST)) {
 </head>
 <body>
     <section>
-    <form action='../5-10_debugging/lesson1.php' method="POST">
+    <form action='./lesson1.php' method="POST">
         <label>姓</label>
         <input type="text" name="last_name"/>
         <label>名</label>

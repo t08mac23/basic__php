@@ -155,7 +155,7 @@ if (! empty($_POST)) {
 </head>
 <body>
     <section>
-    <form action='../5-10_debugging/lesson3.php' method='post'>
+    <form action='./lesson3.php' method='post'>
         <label>姓</label>
         <input type="text" name="last_name" value="<?php echo '山田' ?>" />
         <label>名</label>
